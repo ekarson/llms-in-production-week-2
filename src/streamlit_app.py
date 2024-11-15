@@ -4,7 +4,7 @@ import guardrails as gd
 import openai
 import streamlit as st
 
-from src.cached_resources import get_guard
+from src.cached_resources import get_guard, instrument
 from src.constants import OPENAI_MODEL_ARGUMENTS
 from src.models import LLMResponse
 
@@ -47,6 +47,7 @@ def generate_response(input_text: str, guard: gd.Guard) -> None:
 
 def main() -> None:
     guard = get_guard()
+    instrument()
     with st.form("my_form"):
 
         st.warning("It is extremely unlikely that this code will work as intended!", icon='💀')
