@@ -48,6 +48,9 @@ def generate_response(input_text: str, guard: gd.Guard) -> None:
 def main() -> None:
     guard = get_guard()
     with st.form("my_form"):
+
+        st.warning("It is extremely unlikely that this code will work as intended!", icon='💀')
+
         text = st.text_area(
             "Enter text:",
         )
